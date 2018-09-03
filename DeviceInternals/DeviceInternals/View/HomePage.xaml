@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DeviceInternals" xmlns:sfchart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms" xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms" x:Class="DeviceInternals.HomePage" Padding="0,20,0,0">
+    <ContentPage.BindingContext>
+        <local:HomePageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <tabView:SfTabView DisplayMode="ImageWithText">
+            <tabView:SfTabItem IconFont="Gauge">
+                <tabView:SfTabItem.HeaderContent>
+                    <Grid>
+                        <Image Source="Gauge.png" InputTransparent="True" />
+                    </Grid>
+                </tabView:SfTabItem.HeaderContent>
+                <tabView:SfTabItem.Content>
+                    <tabView:SfTabView TabHeaderPosition="Bottom" VisibleHeaderCount="2" TabHeaderBackgroundColor="#eaecef">
+                        <tabView:SfTabItem Title="Circular Gauge">
+                            <tabView:SfTabItem.Content>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="9*" />
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0" HorizontalOptions="Center">
+                                        <Button Command="{Binding AccerelationStartCommand}" x:Name="startAccerelation2" WidthRequest="120" CornerRadius="5" Text="Start" />
+                                        <Button Command="{Binding AccerelationStopCommand}" Margin="40,0,0,0" WidthRequest="120" CornerRadius="5" Text="Stop" />
+                                    </StackLayout>
+                                    <Grid Grid.Row="1" x:Name="gaugeGrid">
+                                        <gauge:SfCircularGauge x:Name="circularGauge">
+                                            <gauge:SfCircularGauge.Scales>
+                                                <gauge:Scale ScaleStartOffset="0.9" ScaleEndOffset="0.87" RimColor="DarkGray" Interval="0.2" LabelColor="Gray" LabelOffset="0.7" StartValue="-1" EndValue="1">
+                                                    <gauge:Scale.MajorTickSettings>
+                                                        <gauge:TickSettings Color="DarkGray" Thickness="4" StartOffset="0.9" EndOffset="0.82" />
+                                                    </gauge:Scale.MajorTickSettings>
+                                                    <gauge:Scale.MinorTickSettings>
+                                                        <gauge:TickSettings Color="DarkGray" Thickness="2" StartOffset="0.9" EndOffset="0.84" />
+                                                    </gauge:Scale.MinorTickSettings>
+                                                    <gauge:Scale.Pointers>
+                                                        <gauge:NeedlePointer Value="{Binding XAccelerationValue}" Color="Red" KnobColor="White" KnobStrokeColor="Red" KnobStrokeWidth="9" TailColor="Red" TailLengthFactor="0.2" TailStrokeWidth="1" TailStrokeColor="Red" LengthFactor="0.65"
+                                                            KnobRadius="10" />
+                                                    </gauge:Scale.Pointers>
+                                                </gauge:Scale>
+                                            </gauge:SfCircularGauge.Scales>
+                                            <gauge:SfCircularGauge.Headers>
+                                                <gauge:Header Text="{Binding XAccelerationValue,StringFormat='X = {0:F2}'}" ForegroundColor="DarkGray" FontAttributes="Bold" Position="0.5,0.75" />
+                                            </gauge:SfCircularGauge.Headers>
+                                        </gauge:SfCircularGauge>
+                                        <gauge:SfCircularGauge x:Name="circularGauge1">
+                                            <gauge:SfCircularGauge.Scales>
+                                                <gauge:Scale ScaleStartOffset="0.9" ScaleEndOffset="0.87" RimColor="DarkGray" Interval="0.2" LabelColor="Gray" LabelOffset="0.7" StartValue="-1" EndValue="1">
+                                                    <gauge:Scale.MajorTickSettings>
+                                                        <gauge:TickSettings Color="DarkGray" Thickness="4" StartOffset="0.9" EndOffset="0.82" />
+                                                    </gauge:Scale.MajorTickSettings>
+                                                    <gauge:Scale.MinorTickSettings>
+                                                        <gauge:TickSettings Color="DarkGray" Thickness="2" StartOffset="0.9" EndOffset="0.84" />
+                                                    </gauge:Scale.MinorTickSettings>
+                                                    <gauge:Scale.Pointers>
+                                                        <gauge:NeedlePointer Value="{Binding YAccelerationValue}" Color="Red" KnobColor="White" KnobStrokeColor="Red" KnobStrokeWidth="9" TailColor="Red" TailLengthFactor="0.2" TailStrokeWidth="1" TailStrokeColor="Red" LengthFactor="0.65"
+                                                            KnobRadius="10" />
+                                                    </gauge:Scale.Pointers>
+                                                </gauge:Scale>
+                                            </gauge:SfCircularGauge.Scales>
+                                            <gauge:SfCircularGauge.Headers>
+                                                <gauge:Header Text="{Binding YAccelerationValue,StringFormat='Y = {0:F2}'}" ForegroundColor="DarkGray" FontAttributes="Bold" Position="0.5,0.75" />
+                                            </gauge:SfCircularGauge.Headers>
+                                        </gauge:SfCircularGauge>
+                                        <gauge:SfCircularGauge x:Name="circularGauge2">
+                                            <gauge:SfCircularGauge.Scales>
+                                                <gauge:Scale ScaleStartOffset="0.9" ScaleEndOffset="0.87" RimColor="DarkGray" Interval="0.2" LabelColor="Gray" LabelOffset="0.7" StartValue="-1" EndValue="1">
+                                                    <gauge:Scale.MajorTickSettings>
+                                                        <gauge:TickSettings Color="DarkGray" Thickness="4" StartOffset="0.9" EndOffset="0.82" />
+                                                    </gauge:Scale.MajorTickSettings>
+                                                    <gauge:Scale.MinorTickSettings>
+                                                        <gauge:TickSettings Color="DarkGray" Thickness="2" StartOffset="0.9" EndOffset="0.84" />
+                                                    </gauge:Scale.MinorTickSettings>
+                                                    <gauge:Scale.Pointers>
+                                                        <gauge:NeedlePointer Value="{Binding ZAccelerationValue}" Color="Red" KnobColor="White" KnobStrokeColor="Red" TailColor="Red" TailLengthFactor="0.2" TailStrokeWidth="1" TailStrokeColor="Red" KnobStrokeWidth="9" LengthFactor="0.65"
+                                                            KnobRadius="10" />
+                                                    </gauge:Scale.Pointers>
+                                                </gauge:Scale>
+                                            </gauge:SfCircularGauge.Scales>
+                                            <gauge:SfCircularGauge.Headers>
+                                                <gauge:Header Text="{Binding ZAccelerationValue,StringFormat='Z = {0:F2}'}" ForegroundColor="DarkGray" FontAttributes="Bold" Position="0.5,0.75" />
+                                            </gauge:SfCircularGauge.Headers>
+                                        </gauge:SfCircularGauge>
+                                    </Grid>
+                                </Grid>
+                            </tabView:SfTabItem.Content>
+                        </tabView:SfTabItem>
+                        <tabView:SfTabItem Title="SfChart">
+                            <tabView:SfTabItem.Content>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0" HorizontalOptions="Center">
+                                        <Button Command="{Binding AccerelationStartCommand}" x:Name="startAccerelation" WidthRequest="120" CornerRadius="5" Text="Start" />
+                                        <Button Command="{Binding AccerelationStopCommand}" Margin="40,0,0,0" WidthRequest="120" CornerRadius="5" Text="Stop" />
+                                    </StackLayout>
+                                    <sfchart:SfChart x:Name="chart" Grid.Row="1">
+                                        <sfchart:SfChart.PrimaryAxis>
+                                            <sfchart:NumericalAxis Minimum="0" Maximum="40" Interval="10" EdgeLabelsDrawingMode="Shift">
+                                                <sfchart:NumericalAxis.Title>
+                                                    <sfchart:ChartAxisTitle Text="Time (S)" />
+                                                </sfchart:NumericalAxis.Title>
+                                            </sfchart:NumericalAxis>
+                                        </sfchart:SfChart.PrimaryAxis>
+                                        <sfchart:SfChart.SecondaryAxis>
+                                            <sfchart:NumericalAxis Minimum="-1.5" Maximum="1.5" Interval="0.5">
+                                                <sfchart:NumericalAxis.Title>
+                                                    <sfchart:ChartAxisTitle Text="Acceleration (Gs)" />
+                                                </sfchart:NumericalAxis.Title>
+                                            </sfchart:NumericalAxis>
+                                        </sfchart:SfChart.SecondaryAxis>
+                                        <sfchart:SfChart.Series>
+                                            <sfchart:LineSeries XBindingPath="AccelerationTime" YBindingPath="XAccelerationValue" ItemsSource="{Binding AccerelationValues}" Label="X Accel (Gs)" LegendIcon="SeriesType" />
+                                            <sfchart:LineSeries XBindingPath="AccelerationTime" YBindingPath="YAccelerationValue" ItemsSource="{Binding AccerelationValues}" Label="Y Accel (Gs)" LegendIcon="SeriesType" />
+                                            <sfchart:LineSeries XBindingPath="AccelerationTime" YBindingPath="ZAccelerationValue" ItemsSource="{Binding AccerelationValues}" Label="Z Accel (Gs)" LegendIcon="SeriesType" />
+                                        </sfchart:SfChart.Series>
+                                        <sfchart:SfChart.Legend>
+                                            <sfchart:ChartLegend />
+                                        </sfchart:SfChart.Legend>
+                                    </sfchart:SfChart>
+                                </Grid>
+                            </tabView:SfTabItem.Content>
+                        </tabView:SfTabItem>
+                    </tabView:SfTabView>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+            <tabView:SfTabItem IconFont="WiFi">
+                <tabView:SfTabItem.HeaderContent>
+                    <Grid>
+                        <Image Source="Wifi.png" InputTransparent="True" />
+                    </Grid>
+                </tabView:SfTabItem.HeaderContent>
+                <tabView:SfTabItem.Content>
+                    <OnPlatform x:TypeArguments="View">
+                        <OnPlatform.iOS>
+                            <Label Text="Wifi is not supported in iOS platform" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
+                        </OnPlatform.iOS>
+                        <OnPlatform.Android>
+                            <StackLayout>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                        <Button x:Name="startbtn" Text="Start Scan" HorizontalOptions="Center" Command="{Binding WifiNetworksCommand}" />
+                                    </StackLayout>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="SSID" HorizontalOptions="Center" />
+                                        <Label Grid.Column="1" Text="Level" HorizontalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                                <BoxView HeightRequest="10" />
+                                <syncfusion:SfListView x:Name="listView" ItemSize="70" ItemsSource="{Binding AvailableWifiNetworks}">
+                                    <syncfusion:SfListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <ViewCell.View>
+                                                    <Grid VerticalOptions="CenterAndExpand">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto" />
+                                                        </Grid.RowDefinitions>
+                                                        <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="Start">
+                                                            <Label x:Name="wifinet" Text="{Binding WifiNetworkName}" FontSize="14" Font="Bold" />
+                                                            <Label Text="{Binding NetworkAddress}" FontSize="10" />
+                                                        </StackLayout>
+                                                        <Grid Grid.Column="1" Grid.Row="0" HorizontalOptions="End">
+                                                            <Image Source="{Binding NetworkImage}" HeightRequest="30" WidthRequest="50" VerticalOptions="Center" HorizontalOptions="End" />
+                                                        </Grid>
+                                                    </Grid>
+                                                </ViewCell.View>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </syncfusion:SfListView.ItemTemplate>
+                                </syncfusion:SfListView>
+                            </StackLayout>
+                        </OnPlatform.Android>
+                    </OnPlatform>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+            <tabView:SfTabItem IconFont="B-T">
+                <tabView:SfTabItem.HeaderContent>
+                    <Grid>
+                        <Image Source="Bluetooth.png" />
+                    </Grid>
+                </tabView:SfTabItem.HeaderContent>
+                <tabView:SfTabItem.Content>
+                    <StackLayout>
+                        <Button Text="Start Scan" Command="{Binding BluetoothSignalsCommand}" HorizontalOptions="Center" />
+                        <syncfusion:SfListView x:Name="listView2" ItemsSource="{Binding AvailableBluetoothSignals}" ItemSize="70">
+                            <syncfusion:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Label Text="{Binding NativeDevice.Name}" FontAttributes="Bold" />
+                                                <Label Text="{Binding NativeDevice.Address}" Grid.Row="1" FontAttributes="None" />
+                                            </Grid>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </syncfusion:SfListView.ItemTemplate>
+                        </syncfusion:SfListView>
+                    </StackLayout>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+            <tabView:SfTabItem IconFont="GPS">
+                <tabView:SfTabItem.HeaderContent>
+                    <Grid>
+                        <Image Source="GPS.png" InputTransparent="True" />
+                    </Grid>
+                </tabView:SfTabItem.HeaderContent>
+                <tabView:SfTabItem.Content>
+                    <Grid>
+                        <maps:SfMaps HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <maps:SfMaps.Layers>
+                                <maps:ImageryLayer x:Name="MapContactLocationLayer" LayerType="OSM" ResetOnDoubleTap="false">
+                                    <maps:ImageryLayer.Markers>
+                                        <local:CustomMarker/>
+                                    </maps:ImageryLayer.Markers>
+                                    <maps:ImageryLayer.MarkerTemplate>
+                                        <OnPlatform x:TypeArguments="DataTemplate">
+                                            <On Platform="Android, iOS">
+                                                <DataTemplate>
+                                                    <StackLayout IsClippedToBounds="false" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="30">
+                                                        <Image Source="{Binding ImageName}" Scale="1" Aspect="AspectFit " HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="23" />
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </On>
+                                            <On Platform="UWP">
+                                                <DataTemplate>
+                                                    <StackLayout Padding="-12,-12,0,0" IsClippedToBounds="false" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="60" WidthRequest="60">
+                                                        <Image Source="marker.png" Scale="1" Aspect="AspectFit " HorizontalOptions="StartAndExpand" VerticalOptions="Center" HeightRequest="15" WidthRequest="23" />
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </On>
+                                        </OnPlatform>
+                                    </maps:ImageryLayer.MarkerTemplate>
+                                </maps:ImageryLayer>
+                            </maps:SfMaps.Layers>
+                        </maps:SfMaps>
+                    </Grid>
+                </tabView:SfTabItem.Content>
+            </tabView:SfTabItem>
+        </tabView:SfTabView>
+    </ContentPage.Content>
+</ContentPage>
