@@ -1,6 +1,6 @@
 # Device Internals #
 
-Device internals is a simple Xamarin.Forms application to demonstrate accessing the device native behaviors such as bluetooth, wifi, accelerometer, geolocation and visualize its values using Syncfusion [Xamarin UI components](https://www.syncfusion.com/products/xamarin). This project uses the following patterns and features:
+Device internals is a simple Xamarin.Forms application that access the device native behaviors such as bluetooth, wifi, accelerometer, geolocation to visualize and monitor those values using [Syncfusion Xamarin UI controls](https://www.syncfusion.com/products/xamarin). This project uses the following patterns and features:
 
 * XAML UI
 * Custom controls
