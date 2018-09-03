@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Network0.png" />
+    <None Remove="Images\Network1.png" />
+    <None Remove="Images\Network2.png" />
+    <None Remove="Images\Network3.png" />
+    <None Remove="Images\Network4.png" />
+    <None Remove="Images\Network5.png" />
+    <None Remove="marker.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Network0.png" />
+    <EmbeddedResource Include="Images\Network1.png" />
+    <EmbeddedResource Include="Images\Network2.png" />
+    <EmbeddedResource Include="Images\Network3.png" />
+    <EmbeddedResource Include="Images\Network4.png" />
+    <EmbeddedResource Include="Images\Network5.png" />
+    <EmbeddedResource Include="Images\marker.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.BLE" Version="1.3.0" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="16.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="16.2.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.2.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfMaps" Version="16.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="16.2.0.46" />    
+    <PackageReference Include="Xamarin.Essentials" Version="0.6.0-preview" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModel\WifiInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
+    <Folder Include="Model\" />
+    <Folder Include="Interface\" />
+  </ItemGroup>
+</Project>
