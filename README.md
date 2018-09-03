@@ -9,7 +9,7 @@ Device internals is a simple Xamarin.Forms application to demonstrate accessing 
 
 This project uses the following plugins,
 
-* [Bluetooth le plugin for Xamarin](https://github.com/xabre/xamarin-bluetooth-le) for accessing bluetooth and wifi
+* [Bluetooth LE plugin for Xamarin](https://github.com/xabre/xamarin-bluetooth-le) for accessing bluetooth
 * [Xamarin.Essentials](https://github.com/xamarin/Essentials) for accessing device location and accelerometer 
 
 And the following Syncfusion controls,
