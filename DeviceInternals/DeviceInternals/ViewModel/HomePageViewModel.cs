@@ -135,7 +135,7 @@ namespace DeviceInternals
             BluetoothSignalsCommand = new Command(GetAvailableBluetoothSignals);
             AccerelationStartCommand = new Command((object speed) =>
             {
-                Accelerometer.Start((SensorSpeed)speed);
+                Accelerometer.Start(SensorSpeed.Ui);
             });
             AccerelationStopCommand = new Command(() =>
             {
