@@ -6,17 +6,10 @@ namespace DeviceInternals
 {
     public partial class HomePage : ContentPage
     {
-        #region Fields
-        SensorSpeed speed;
-        #endregion
-
         #region Constructor
         public HomePage()
         {
             InitializeComponent();
-
-            speed = SensorSpeed.Ui;
-            startAccerelation.CommandParameter = startAccerelation2.CommandParameter = speed;
             AddMarker();
         }
         #endregion
