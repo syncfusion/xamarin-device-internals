@@ -1,18 +1,18 @@
 # Device Internals #
 
-Device internals is a simple Xamarin.Forms application that access the device native behaviors such as bluetooth, wifi, accelerometer, geolocation to visualize and monitor those values using [Syncfusion Xamarin UI controls](https://www.syncfusion.com/products/xamarin). This project uses the following patterns and features:
+Device internals is a simple Xamarin.Forms application that accesses the device native behaviors such as Bluetooth, WiFi, accelerometer, and geolocation to visualize and monitor those values using Syncfusion Xamarin UI controls. This project uses the following patterns and features:
 
 * XAML UI
 * Custom controls
 * Data binding
 * MVVM
 
-This project uses the following plugins,
+This project uses the following plugins:
 
-* [Bluetooth LE plugin for Xamarin](https://github.com/xabre/xamarin-bluetooth-le) for accessing bluetooth
-* [Xamarin.Essentials](https://github.com/xamarin/Essentials) for accessing device location and accelerometer 
+* [Bluetooth LE plugin for Xamarin](https://github.com/xabre/xamarin-bluetooth-le) for accessing Bluetooth.
+* [Xamarin.Essentials](https://github.com/xamarin/Essentials) for accessing device location and accelerometer.
 
-And the following Syncfusion controls,
+And the following Syncfusion controls:
 
 * [Charts](https://www.syncfusion.com/products/xamarin/charts)
 * [Gauges](https://www.syncfusion.com/products/xamarin/circular-gauge)
@@ -23,9 +23,9 @@ And the following Syncfusion controls,
 
 ## Key features ##
 
-1. Get accelerometer values and visualize it using charts and gauges.
-2. Get nearby wifi and bluetooth devices and show it in listview.
-4. Get device current location and plot it in maps.
+* Get accelerometer values and visualize them using charts and gauges.
+* Get nearby WiFi and Bluetooth devices and show them in list view.
+* Get device's current location and plot it in maps.
 
 ## Supported platforms: ##
 
